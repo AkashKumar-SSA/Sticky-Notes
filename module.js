@@ -22,7 +22,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
                 let chunkTest = chunk.text();
                 original_text += chunkTest;
                 console.log(original_text);
-                const resposeArray = chunkTest.split("**");                let newArray;
+                const resposeArray = chunkTest.split("**");              let newArray;
                 // console.log("the splitted text - ",resposeArray);
                 for(let i=0; i < resposeArray.length ; i++){
                     if(i === 0 || i%2 !== 1){
@@ -39,13 +39,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
                 document.querySelector("#ai_output_answer").innerHTML = text;
             }
-            ai_response_print(text);
-            //
+        
             document.querySelector("#ai_output_answer").innerHTML = text;
             // answer(text);
         }
         run();
-        function ai_response_print(text) {
-            console.log("the text data is:.......\n");
-            console.log(original_text);
-        }
