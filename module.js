@@ -21,8 +21,8 @@ async function run() {
     for await (const chunk of result.stream) {
         let chunkTest = chunk.text();
         original_text += chunkTest;
-        console.log(original_text);
-        const resposeArray = chunkTest.split("**"); 
+        // console.log(original_text);
+        const resposeArray = chunkTest.split("**");
         let newArray;
         // console.log("the splitted text - ",resposeArray);
         for (let i = 0; i < resposeArray.length; i++) {

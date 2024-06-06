@@ -24,18 +24,22 @@
     </div>
     <!-- The main container-div -->
     <div id="main_container">
+
         <!-- toolbar -->
         <div id="toolbar">
+            <button id="shapes">
+                <img id="shapes_image" src="shapes_logo.jpg" heigh="70px" width="70px">
+            </button>
             <button onclick="boldText()">B</button>
             <button onclick="underlineText()">U</button>
             <button onclick="strikethroughText()">S</button>
-            <button id="underline">U</button>
-            <!-- <button id="strikethrough" style="text-decoration: line-through;">S</button> -->
+            <button onclick="italic()">I</button>
 
-            <div id="text_color" style="display: flex;flex-direction: column;height: fit-content;">
-                <button id="text_color_choose_button">
-                    <b>T</b></button>
-                <input type="color" name="" id="color" style="height:17px;width: 110%;position: relative;bottom: 15px;">
+            <div id="text_color" style="display: flex;flex-direction: column;height: fit-content;align-items: center;">
+                <span id="text_color_choose_button">
+                    <b>T</b></span>
+                <input type="color" name="" id="color"
+                    style="height:17px;width: 70%;position: relative;bottom: 15px;border:none;">
             </div>
 
             <button id="background_choose"
@@ -52,14 +56,26 @@
                 style="padding: 5px;height: 50px;width: 50px;display: flex;justify-content: center;align-items: center;border-radius: 50%;">
                 <img src="resources/reset.jpg" height="50px" width="50px" style="border-radius: 50%;">
             </div>
+
+            <!-- shapes container -->
+            <div id="shapes_container">
+                <div id="rectangle_shape" style=" width:60px;height: 60px;">
+                    <img id="rectangle_shape" src="rectangle_shape.jpg" height="60px" width="60px">
+                </div>
+                <div id="heart_shape" style=" width:60px;height: 60px;">
+                    <img id="heart_shape" src="heart_shape.jpg" height="60px" width="60px">
+                </div>
+                <div id="circle_shape" style=" width:60px;height: 60px;">
+                    <img id="circle_shape" src="circle_shape.jpg" height="60px" width="60px">
+                </div>
+                <div id="star_shape" style=" width:60px;height: 60px;">
+                    <img id="star_shape" src="star_shape.jpg" height="60px" width="60px">
+                </div>
+                <div id="leaf_shape" style="width:60px;height: 60px;">
+                    <img id=" leaf_shape" src="leaf_shape.jpg" height="60px" width="60px">
+                </div>
+            </div>
         </div>
-
-
-
-
-        <!-- <div id="sticky-note">
-            <p contenteditable="true"></p>
-        </div> -->
 
         <!-- Left Side Container Codes -->
         <div id="left_container">
@@ -81,20 +97,19 @@
                 <textarea name="" id="text_area" cols="40" rows="10" placeholder="Enter text here//"
                     contenteditable="true"></textarea>
 
+                <!-- Code for rectangular shape notes -->
+                <div id="rectangular_notes" style="height: 300px;
+            width: 70%; background-color: white; border: 2px solid black; display: none;" contenteditable="true"></div>
+
                 <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes //"
                     contenteditable="true">
 
                 <input type="text" name="" id="notes_location_info" placeholder="Add location of note creation //"
                     contenteditable="true">
 
-                <!-- <div id="color_choose_option" class="color_pick">
-                    <div id="text_color_choose">
-                        <input type="color" name="" id="color">
-                        <label for="font_color" class="color_label">Text</label>
-                    </div>
-                </div> -->
             </div>
-            <div id="ai" style="position:absolute; left:35%;"> <!-- AI button to ask queris from google Gemini-->
+            <div id="ai" style="position:absolute; left:35%;">
+                <!-- AI button to ask queris from google Gemini-->
                 <p id="ai_highlight">AI</p>
             </div>
             <!-- plus button (+) to save created notes -->
