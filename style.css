@@ -8,6 +8,7 @@
     margin: 0;
     height: 100vh;
     display: flex;
+    background-color: rgba(132, 211, 118, 1);
 }
 
 #folder_options_container {
@@ -28,18 +29,23 @@
 
 /* side-boar / toolbar design */
 #toolbar {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 35vh;
     left: 0;
-    width: 150px;
-    height: 100%;
+    width: 80px;
+    height: fit-content;
     background-color: #f1f1f1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    display: none;
+    gap: 5px;
+    margin-left: 10px;
+    border: 2px solid black;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 }
 
 #toolbar button {
@@ -120,7 +126,7 @@ webpages/html files */
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 /* #left_container{
@@ -245,7 +251,6 @@ webpages/html files */
 
 #right_container {
     width: 55vw;
-    background-color: rgba(132, 211, 118, 1);
     overflow-y: auto;
     margin-top: 58px;
 }

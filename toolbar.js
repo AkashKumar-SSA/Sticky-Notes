@@ -20,11 +20,10 @@ toolbar.addEventListener("click", function (event) {
             document.execCommand("strikethrough", false, null);
             break;
         case "color":
-            const color = prompt("Enter a color:");
             document.execCommand("ForeColor", false, color);
             break;
         case "size":
-            const size = prompt("Enter a size:");
+
             document.execCommand("FontSize", false, size);
             break;
     }
