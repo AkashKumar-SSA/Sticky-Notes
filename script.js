@@ -1,7 +1,7 @@
 const Add_notes = document.querySelector("#button");
 const text = document.getElementsByTagName("textarea")[0];
-const background_color = document.querySelector("#background_choose #color");
-const text_color = document.querySelector("#text_color #color");
+const background_color = document.querySelector("#background_choose #background_choose_color");
+const text_color = document.querySelector("#text_color #text_color_color_input");
 const notes = document.querySelector("#notes_container");
 const empty_line = document.querySelector("#empty_line");
 const add_note = document.querySelector("#add_note");
@@ -11,7 +11,21 @@ const ai_input = document.querySelector("#ai_input");
 
 const notes_location_info = document.querySelector("#notes_location_info");
 
-reset(); // Calling the reset function to reset all the containers
+//  the reset function to reset all the containers
+function reset() {
+    notes_heading.value = "";
+    text.value = ""
+    text_size.value = "30";
+    text.style.fontSize = text_size.value + "px";
+    background_color.value = "#223344";
+    text_color.value = "#a69a9a";
+    text.style.backgroundColor = "#223344";
+    text.style.height = "300px";
+    text.style.width = "70%";
+    notes_location_info.value = "";
+    text_color_choose_button.style.color = text_color.value;
+}
+reset();
 
 // Setting the property to the text/notes field
 background_color.addEventListener('change', function () {
@@ -191,20 +205,7 @@ refresh_content.addEventListener("click", () => {
     reset();
 });
 
-function reset() {
-    notes_heading.value = "";
-    text.value = ""
-    text_size.value = "30";
-    text.style.fontSize = text_size.value + "px";
-    background_color.value = "#223344";
-    text_color.value = "#a69a9a";
-    text.style.backgroundColor = "#223344";
-    text.style.height = "300px";
-    text.style.width = "70%";
-    notes_location_info.value = "";
-    text_color_choose_button.style.color = text_color.value;
 
-}
 //------------------------------------------------code separation line-------------------------------------------------------------
 // Code for integrating interactive Gemini AI_chatbot
 

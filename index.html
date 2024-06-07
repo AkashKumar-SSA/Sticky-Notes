@@ -27,26 +27,36 @@
 
         <!-- toolbar -->
         <div id="toolbar">
-            <button id="shapes">
-                <img id="shapes_image" src="shapes_logo.jpg" heigh="70px" width="70px">
-            </button>
-            <button onclick="boldText()">B</button>
-            <button onclick="underlineText()">U</button>
-            <button onclick="strikethroughText()">S</button>
-            <button onclick="italic()">I</button>
+            <div id="shapes_div">
+                <button id="shapes">
+                    <img id="shapes_image" src="shapes_logo.jpg" heigh="70px" width="70px">
+                </button>
+            </div>
+            <div id="boldText_div">
+                <button id="boldText" onclick=" boldText()">B</button>
+            </div>
+
+            <div id="underlineText_div">
+                <button id="underlineText" onclick="underlineText()">U</button>
+            </div>
+            <div id="strikethroughText_div">
+                <button id="strikethroughText" onclick="strikethroughText()">S</button>
+            </div>
+            <div id="italicText_div">
+                <button id="italic" onclick="italic()">I</button>
+            </div>
 
             <div id="text_color" style="display: flex;flex-direction: column;height: fit-content;align-items: center;">
                 <span id="text_color_choose_button">
                     <b>T</b></span>
-                <input type="color" name="" id="color"
+                <input type="color" name="" id="text_color_color_input"
                     style="height:17px;width: 70%;position: relative;bottom: 15px;border:none;">
             </div>
 
-            <button id="background_choose"
-                style="position: relative; display: flex; justify-content: center;align-items: center;">
-                <input type="color" name="" id="color">
+            <div id="background_choose" style="display: flex; justify-content: center;align-items: center;">
+                <input type="color" name="" id="background_choose_color">
                 <label for="color" class="color_label"></label>
-            </button>
+            </div>
 
             <div id="textSize_input_container">
                 <button id="size_input_button">size</button>
@@ -54,7 +64,8 @@
             </div>
             <div id="refresh_content"
                 style="padding: 5px;height: 50px;width: 50px;display: flex;justify-content: center;align-items: center;border-radius: 50%;">
-                <img src="resources/reset.jpg" height="50px" width="50px" style="border-radius: 50%;">
+                <img src="resources/reset.jpg" id="refresh_image" height=" 50px" width="50px"
+                    style="border-radius: 50%;">
             </div>
 
             <!-- shapes container -->
@@ -98,8 +109,11 @@
                     contenteditable="true"></textarea>
 
                 <!-- Code for rectangular shape notes -->
-                <div id="rectangular_notes" style="height: 300px;
-            width: 70%; background-color: white; border: 2px solid black; display: none;" contenteditable="true"></div>
+                <div id="rectangular_note"
+                    style="height: 300px;
+            width: 70%; background-color: white; border: 2px solid black; display: none; border-radius:10px;padding: 20px;"
+                    contenteditable="true">
+                </div>
 
                 <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes //"
                     contenteditable="true">
@@ -134,14 +148,14 @@
     <script src="./toolbar.js"></script>
     <script src="./script.js"></script>
     <script src="no_access.js"></script>
-    <script type="importmap">
+    <!-- <script type="importmap">
         {
             "imports": {
                 "@google/generative-ai": "https://esm.run/@google/generative-ai"
             }
         }
     </script>
-    <script type="module" src="module.js"></script>
+    <script type="module" src="module.js"></script> -->
 
 
 

@@ -1,10 +1,78 @@
-// code for toolbar -----------------------------------------------
-const toolbar = document.querySelector("#toolbar");
-const size_input_button = document.querySelector("#size_input_button");
-const shapes = document.querySelector("#shapes_image");
+// const toolbar = document.querySelector("#toolbar");
+const size_input_button = document.querySelector("#textSize_input_container #size_input_button");
+const shapes = document.querySelector("#shapes");
 const shapes_container = document.querySelector("#shapes_container");
 let text_Area;
 
+// Get all container elements inside the toolbar
+const containers = document.querySelectorAll("#toolbar > div");
+
+function tools_detail(id, detail) {
+    const tool = document.getElementById(id);
+    const tool_description_div = document.createElement("div");
+    tool_description_div.id = "tool_description_div";
+    tool_description_div.style = "height:fit-content;width:fit-content;position:absolute;left:75px;top:0;font-size:25px;border-radius:10px;text-wrap:nowrap;padding:5px;"
+    tool_description_div.innerHTML = detail;
+    tool.appendChild(tool_description_div);
+
+    containers.forEach((container) => {
+        container.addEventListener("mouseout", () => {
+            tool_description_div.style.display = "none";
+        })
+    })
+}
+
+// Add mouseover event listener to each container
+containers.forEach((container) => {
+    container.addEventListener("mouseover", () => {
+        // Your code to handle the mouseover event
+        switch (container.id) {
+            case "shapes_div":
+                tools_detail(container.id, "shapes");
+                break;
+
+            case "boldText_div":
+                tools_detail(container.id, "bold");
+                break;
+
+            case "underlineText_div":
+                tools_detail(container.id, "underline");
+                break;
+
+            case "strikethroughText_div":
+                tools_detail(container.id, "strike");
+                break;
+
+            case "italicText_div":
+                tools_detail(container.id, "italic");
+                break;
+
+            case "text_color":
+                tools_detail(container.id, "text colour");
+                break;
+
+            case "background_choose":
+                tools_detail(container.id, "background colour");
+                break;
+
+            case "textSize_input_container":
+                tools_detail(container.id, "text size");
+                break;
+
+            case "refresh_content":
+                tools_detail(container.id, "refresh");
+                break;
+
+            default:
+                break;
+        }
+
+    });
+});
+
+
+
+// Text size input tool button 
 let display_sizeInput = false;
 size_input_button.addEventListener("click", function () {
     if (display_sizeInput) {
@@ -17,14 +85,16 @@ size_input_button.addEventListener("click", function () {
     }
 });
 
+// Textarea backgroud color choose button
 const text_background_color = document.querySelector("#text_background_color");
-const background_colord = document.querySelector("#background_choose #color");
+const background_colord = document.querySelector("#background_choose #background_choose_color");
 background_colord.addEventListener('change', function () {
     text_background_color.style.backgroundColor = background_colord.value;
 });
 
-const text_color_choose_button = document.querySelector("#text_color_choose_button");
 
+// Text color choose button
+const text_color_choose_button = document.querySelector("#text_color_choose_button");
 text_color_choose_button.addEventListener("click", function () {
     text_color.click();
 });
@@ -32,6 +102,7 @@ text_color.addEventListener("change", () => {
     text_color_choose_button.style.color = text_color.value;
 });
 
+// Click event on shapes tool in the toolbar
 let shapes_show_condition = true;
 shapes.addEventListener("click", () => {
     if (shapes_show_condition) {
@@ -43,9 +114,10 @@ shapes.addEventListener("click", () => {
     }
 });
 
+// Click event on the shapes(shapes container)
 shapes_container.addEventListener("click", (event) => {
     const shapeId = event.target.id;
-    console.log(shapeId);
+    // console.log(shapeId);
 
     switch (shapeId) {
         case "rectangle_shape":
@@ -73,24 +145,64 @@ function close_shape_container() {
 function rectangle_function() {
     text.style.display = "none";
     close_shape_container();
-    const shape_open = document.querySelector("#rectangular_notes");
+    const shape_open = document.querySelector("#rectangular_note");
     shape_open.style.display = "block";
     text_Area = shape_open;
 
 }
-// Text formatting using keyboard events
-textArea.addEventListener("keydown", function (event) {
-    if (event.ctrlKey && event.key === "b") {
-        document.execCommand("bold", false, null);
-        event.preventDefault();
-    } else if (event.ctrlKey && event.key === "i") {
-        document.execCommand("italic", false, null);
-        event.preventDefault();
-    } else if (event.ctrlKey && event.key === "u") {
-        document.execCommand("underline", false, null);
-        event.preventDefault();
-    }
+
+
+
+document.getElementById('refresh_content').addEventListener('click', function () {
+    var refreshImage = document.getElementById('refresh_image');
+    refreshImage.style.animation = 'rotate 1.5s linear';
+    refreshImage.style.animationIterationCount = '1';
+
+    // Reset the animation after it completes
+    setTimeout(function () {
+        refreshImage.style.animation = '';
+    }, 1000);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Text formatting using keyboard events
+// text_Area.addEventListener("keydown", function (event) {
+//     if (event.ctrlKey && event.key === "b") {
+//         document.execCommand("bold", false, null);
+//         event.preventDefault();
+//     } else if (event.ctrlKey && event.key === "i") {
+//         document.execCommand("italic", false, null);
+//         event.preventDefault();
+//     } else if (event.ctrlKey && event.key === "u") {
+//         document.execCommand("underline", false, null);
+//         event.preventDefault();
+//     }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Text formatting functions
 function boldText() {
     document.execCommand('bold', false, null);
@@ -201,7 +313,6 @@ function justifyCenter() {
 function justifyLeft() {
     document.execCommand('justifyLeft', false, null);
 }
-
 function insertUnorderedList() {
     document.execCommand('insertUnorderedList', false, null);
 }
