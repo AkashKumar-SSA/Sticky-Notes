@@ -111,7 +111,7 @@ function AddNotes() {
 
     // Clock logo
     const clock_logo = document.createElement("img");
-    clock_logo.src = "clock2_image.jpg";
+    clock_logo.src = "resources/clock_image.jpg";
     clock_logo.style = "height:25px;"
 
     date_time_only_div = document.createElement("div");
@@ -143,7 +143,7 @@ function AddNotes() {
 
     // Mouseover / Mouseout event Location logo
     const location_logo = document.createElement("img");
-    location_logo.src = "location_logo.jpg";
+    location_logo.src = "resources/location_logo.jpg";
     location_logo.style = "height:25px;display:flex;flex-direction:column;";
     date_time_location_div.appendChild(location_logo);
     const popup_heading = document.createElement("P");
@@ -164,7 +164,7 @@ function AddNotes() {
 
     // Notes edit-option code container
     const edit_note = document.createElement("img");
-    edit_note.src = "edit_logo.jpg";
+    edit_note.src = "resources/edit_logo.jpg";
     edit_note.style = "height:25px;";
     date_time_location_div.appendChild(edit_note);
 

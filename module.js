@@ -1,5 +1,4 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-// import md from "markdown-it";
 
 document.querySelector("#ai_answer_generate_button").addEventListener('click', run);
 
@@ -21,27 +20,22 @@ async function run() {
     for await (const chunk of result.stream) {
         let chunkTest = chunk.text();
         original_text += chunkTest;
-        // console.log(original_text);
         const resposeArray = chunkTest.split("**");
         let newArray;
-        // console.log("the splitted text - ",resposeArray);
         for (let i = 0; i < resposeArray.length; i++) {
             if (i === 0 || i % 2 !== 1) {
                 newArray += resposeArray[i];
             } else {
                 newArray += "<br>";
                 newArray += "<b>" + resposeArray[i] + "</b>";
-                newArray += "&nbsp;&nbsp;";
             }
         }
-        let newArray2 = newArray.split("*").join("<br>&nbsp;&nbsp;");
-        // text += chunkTest;
+        let newArray2 = newArray.split("*").join("<br>&nbsp;");
         text += newArray2;
 
         document.querySelector("#ai_output_answer").innerHTML = text;
     }
 
     document.querySelector("#ai_output_answer").innerHTML = text;
-    // answer(text);
 }
 run();
