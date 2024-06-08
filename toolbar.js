@@ -5,9 +5,10 @@ const containers = document.querySelectorAll("#toolbar > div");
 
 function tools_detail(id, detail) {
     const tool = document.getElementById(id);
+
     const tool_description_div = document.createElement("div");
     tool_description_div.id = "tool_description_div";
-    tool_description_div.style = "height:fit-content;width:fit-content;position:absolute;left:75px;top:0;font-size:25px;border-radius:10px;text-wrap:nowrap;padding:5px;"
+    tool_description_div.style = "height:fit-content;width:fit-content;position:absolute;left:75px;top:0;font-size:25px;border-radius:10px;text-wrap:nowrap;padding:5px;background-color:lightgreen;z-index:11;"
     tool_description_div.innerHTML = detail;
     tool.appendChild(tool_description_div);
 
@@ -57,6 +58,54 @@ containers.forEach((container) => {
 
             case "refresh_content":
                 tools_detail(container.id, "refresh");
+                break;
+
+            case "insertImage":
+                tools_detail(container.id, "Insert Image")
+                break;
+
+            case "insertHorizontalRule":
+                tools_detail(container.id, "Horizontal Line")
+                break;
+
+            case "superscript":
+                tools_detail(container.id, "superscript")
+                break;
+
+            case "subscript":
+                tools_detail(container.id, "subscript")
+                break;
+
+            case "indent":
+                tools_detail(container.id, "Indent text")
+                break;
+
+            case "outdent":
+                tools_detail(container.id, "Remove indent")
+                break;
+
+            case "createLink":
+                tools_detail(container.id, "Create link");
+                break;
+
+            case "unlink":
+                tools_detail(container.id, "Remove link")
+                break;
+
+            case "insertLineBreak":
+                tools_detail(container.id, "Line break")
+                break;
+
+            case "selectall":
+                tools_detail(container.id, "Select All")
+                break;
+
+            case "redo":
+                tools_detail(container.id, "Redo")
+                break;
+
+            case "undo":
+                tools_detail(container.id, "Undo")
                 break;
 
             default:
