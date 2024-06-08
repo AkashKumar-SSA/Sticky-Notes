@@ -26,17 +26,23 @@ function close_shape_container() {
 function rectangle_function() {
     text.style.display = "none";
     close_shape_container();
-    const shape_open = document.querySelector("#rectangular_note");
-    shape_open.style.display = "block";
+
+    rectangular_note.style.display = "block";
     text_Area = shape_open;
 }
 
+const rectangular_note = document.querySelector("#rectangular_note");
 shapes_container_elements.forEach((elements) => {
     elements.addEventListener("click", () => {
         console.log(elements.id);
         switch (elements.id) {
             case "rectangle_shape":
-                rectangle_function();
+                text.style.display = "none";
+                text = rectangular_note;
+                reset();
+                rectangular_note.style.display = "block";
+
+                close_shape_container();
                 break;
             case "heart_shape":
                 break;

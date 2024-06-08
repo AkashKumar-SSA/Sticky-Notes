@@ -173,6 +173,7 @@ webpages/html files */
     background-color: rgb(34, 51, 68);
     color: rgb(166, 154, 154);
     font-weight: 500;
+    text-wrap: wrap;
 }
 
 /* Notes heading and location input container */

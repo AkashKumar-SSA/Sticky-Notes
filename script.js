@@ -1,5 +1,5 @@
 const Add_notes = document.querySelector("#button");
-const text = document.getElementsByTagName("textarea")[0];
+let text = document.querySelector("#text_area");
 const background_color = document.querySelector("#background_choose #background_choose_color");
 const text_color = document.querySelector("#text_color #text_color_color_input");
 const notes = document.querySelector("#notes_container");
