@@ -1,9 +1,5 @@
 // const toolbar = document.querySelector("#toolbar");
 const size_input_button = document.querySelector("#textSize_input_container #size_input_button");
-const shapes = document.querySelector("#shapes");
-const shapes_container = document.querySelector("#shapes_container");
-let text_Area;
-
 // Get all container elements inside the toolbar
 const containers = document.querySelectorAll("#toolbar > div");
 
@@ -102,54 +98,7 @@ text_color.addEventListener("change", () => {
     text_color_choose_button.style.color = text_color.value;
 });
 
-// Click event on shapes tool in the toolbar
-let shapes_show_condition = true;
-shapes.addEventListener("click", () => {
-    if (shapes_show_condition) {
-        shapes_container.style.display = "flex";
-        shapes_show_condition = false;
-    } else {
-        shapes_container.style.display = "none";
-        shapes_show_condition = true;
-    }
-});
 
-// Click event on the shapes(shapes container)
-shapes_container.addEventListener("click", (event) => {
-    const shapeId = event.target.id;
-    // console.log(shapeId);
-
-    switch (shapeId) {
-        case "rectangle_shape":
-            // alert("Rectangle shape clicked");
-            rectangle_function();
-            break;
-
-        case "heart_shape":
-            alert("heart shape clicked");
-            break;
-
-        case "circle_shape":
-            alert("circle_shape shape clicked");
-            break;
-
-        case "star_shape":
-            alert("star shape clicked");
-            break;
-    }
-});
-function close_shape_container() {
-    shapes_container.style.display = "none";
-    shapes_show_condition = true;
-}
-function rectangle_function() {
-    text.style.display = "none";
-    close_shape_container();
-    const shape_open = document.querySelector("#rectangular_note");
-    shape_open.style.display = "block";
-    text_Area = shape_open;
-
-}
 
 
 
