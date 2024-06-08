@@ -14,7 +14,7 @@ const notes_location_info = document.querySelector("#notes_location_info");
 //  the reset function to reset all the containers
 function reset() {
     notes_heading.value = "";
-    text.value = ""
+    text.innerHTML = ""
     text_size.value = "30";
     text.style.fontSize = text_size.value + "px";
     background_color.value = "#223344";
@@ -42,8 +42,9 @@ text_size.addEventListener('change', function () {
 Add_notes.addEventListener("click", AddNotes);
 
 function AddNotes() {
+    console.log(text.innerHTML);
 
-    if (text.value === "") {
+    if (text.innerHTML === "") {
         return;
     }
     if (notes_heading.value === "") {
@@ -99,7 +100,7 @@ function AddNotes() {
     text_div.appendChild(content);
     text_div.style = "margin:0";
     content.id = "sticky_note_content";
-    content.innerText = text.value;
+    content.innerHTML = text.innerHTML;
     content.style.fontSize = text_size.value + "px";
     content.style.color = text_color.value;
 
@@ -188,7 +189,7 @@ function AddNotes() {
         // text.innerHTML  += p.innerText;
         // notes_heading.innerText = heading.value;
 
-        text.value = content.innerText;
+        text.innerHTML = content.innerHTML;
         notes_heading.value = heading.innerText;
         notes_location_info.value = popup_location.innerText;
         console.log("text content =", content.innerText);

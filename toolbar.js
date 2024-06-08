@@ -127,29 +127,18 @@ document.getElementById('refresh_content').addEventListener('click', function ()
 
 
 // Text formatting using keyboard events
-// text_Area.addEventListener("keydown", function (event) {
-//     if (event.ctrlKey && event.key === "b") {
-//         document.execCommand("bold", false, null);
-//         event.preventDefault();
-//     } else if (event.ctrlKey && event.key === "i") {
-//         document.execCommand("italic", false, null);
-//         event.preventDefault();
-//     } else if (event.ctrlKey && event.key === "u") {
-//         document.execCommand("underline", false, null);
-//         event.preventDefault();
-//     }
-// });
-
-
-
-
-
-
-
-
-
-
-
+text.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "b") {
+        document.execCommand("bold", false, null);
+        event.preventDefault();
+    } else if (event.ctrlKey && event.key === "i") {
+        document.execCommand("italic", false, null);
+        event.preventDefault();
+    } else if (event.ctrlKey && event.key === "u") {
+        document.execCommand("underline", false, null);
+        event.preventDefault();
+    }
+});
 
 
 // Text formatting functions
