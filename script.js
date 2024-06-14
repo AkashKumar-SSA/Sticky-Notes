@@ -186,14 +186,10 @@ function AddNotes() {
 
     //edit_note mouse click events Listener
     edit_note.addEventListener("click", () => {
-        // text.innerHTML  += p.innerText;
-        // notes_heading.innerText = heading.value;
-
         text.innerHTML = content.innerHTML;
+        text.style.backgroundColor = div.style.backgroundColor;
         notes_heading.value = heading.innerText;
         notes_location_info.value = popup_location.innerText;
-        console.log("text content =", content.innerText);
-        // insert_content_toEdit(p);
     });
 
     notes.appendChild(div); // adding the div to the notes div container

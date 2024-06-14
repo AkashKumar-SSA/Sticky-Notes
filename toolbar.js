@@ -12,9 +12,15 @@ function tools_detail(id, detail) {
     tool_description_div.innerHTML = detail;
     tool.appendChild(tool_description_div);
 
+
     containers.forEach((container) => {
+        setTimeout(() => {
+            tool_description_div.style.display = "none";
+        }, 900);
+
         container.addEventListener("mouseout", () => {
             tool_description_div.style.display = "none";
+
         })
     })
 }
@@ -269,9 +275,11 @@ function selectall() {
     document.execCommand('selectAll', false, null);
 }
 function redo() {
+    reset();
     document.execCommand('redo', false, null);
 }
 function undo() {
+    reset();
     document.execCommand('undo', false, null);
 }
 function insertHTML() {
