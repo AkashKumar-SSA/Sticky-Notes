@@ -34,7 +34,7 @@ function rectangle_function() {
 const rectangular_note = document.querySelector("#rectangular_note");
 shapes_container_elements.forEach((elements) => {
     elements.addEventListener("click", () => {
-        console.log(elements.id);
+        // console.log(elements.id);
         switch (elements.id) {
             case "rectangle_shape":
                 text.style.display = "none";

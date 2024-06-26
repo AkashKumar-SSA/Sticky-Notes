@@ -5,7 +5,6 @@ const containers = document.querySelectorAll("#toolbar > div");
 
 function tools_detail(id, detail) {
     const tool = document.getElementById(id);
-
     const tool_description_div = document.createElement("div");
     tool_description_div.id = "tool_description_div";
     tool_description_div.style = "height:fit-content;width:fit-content;position:absolute;left:75px;top:0;font-size:25px;border-radius:10px;text-wrap:nowrap;padding:5px;background-color:lightgreen;z-index:11;"
@@ -15,6 +14,7 @@ function tools_detail(id, detail) {
 
     containers.forEach((container) => {
         setTimeout(() => {
+
             tool_description_div.style.display = "none";
         }, 900);
 
@@ -113,6 +113,8 @@ containers.forEach((container) => {
             case "undo":
                 tools_detail(container.id, "Undo")
                 break;
+            case "ai":
+                tools_detail(container.id, "Gemini AI")
 
             default:
                 break;
@@ -167,16 +169,6 @@ document.getElementById('refresh_content').addEventListener('click', function ()
         refreshImage.style.animation = '';
     }, 1000);
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -285,8 +277,29 @@ function undo() {
 function insertHTML() {
     document.execCommand('insertHTML', false, null);
 }
+// function insertImage() {
+//     document.execCommand('insertImage', false, null);
+// }
 function insertImage() {
-    document.execCommand('insertImage', false, null);
+    var textArea = document.getElementById('text');
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+
+    input.addEventListener('change', function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.addEventListener('load', function () {
+            var img = document.createElement('img');
+            img.src = reader.result;
+            textArea.appendChild(img);
+        });
+
+        reader.readAsDataURL(file);
+    });
+
+    input.click();
 }
 function insertParagraph() {
     document.execCommand('insertParagraph', false, null);
