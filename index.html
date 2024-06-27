@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sticky Notes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
         <div id="toolbar">
             <div id="shapes_div">
                 <button id="shapes_button">
-                    <img id="shapes_image" src="resources/shapes_logo.jpg" heigh="70px" width="70px">
+                    <img id="shapes_image" src="resources/shapes_logo.jpg">
                 </button>
             </div>
             <div id="insertImage">
@@ -81,12 +82,12 @@
 
             <div id="unlink">
                 <button id="unlink" onclick="unlink()">
-                    <span style="color: blue;">A</span>
+                    <span>A</span>
                 </button>
             </div>
 
-            <div id="createLink">
-                <button id="createLink" onclick="createLink()"><u style="color: blue;">A</u>
+            <div id=" createLink">
+                <button id="createLink" onclick="createLink()"><u>A</u>
                 </button>
             </div>
 
@@ -101,14 +102,13 @@
             <!-- <div id="insertText">
                 <button id="insertText" onclick="insertText()">text</button>
             </div> -->
-            <div id="text_color" style="display: flex;flex-direction: column;height: fit-content;align-items: center;">
+            <div id="text_color">
                 <span id="text_color_choose_button">
                     <b>T</b></span>
-                <input type="color" name="" id="text_color_color_input"
-                    style="height:17px;width: 70%;position: relative;bottom: 15px;border:none;">
+                <input type="color" name="" id="text_color_color_input">
             </div>
 
-            <div id="background_choose" style="display: flex; justify-content: center;align-items: center;">
+            <div id="background_choose">
                 <input type="color" name="" id="background_choose_color">
                 <label for="color" class="color_label"></label>
             </div>
@@ -121,29 +121,27 @@
                 <!-- AI button to ask queris from google Gemini-->
                 <p id="ai_highlight">AI</p>
             </div>
-            <div id="refresh_content"
-                style="padding: 5px;height: 50px;width: 50px;display: flex;justify-content: center;align-items: center;border-radius: 50%;">
-                <img src="resources/reset.jpg" id="refresh_image" height=" 50px" width="50px"
-                    style="border-radius: 50%;">
+            <div id="refresh_content">
+                <img src=" resources/reset.jpg" id="refresh_image">
             </div>
 
 
             <!-- shapes container -->
             <div id="shapes_container">
-                <div id="rectangle_shape" style=" width:60px;height: 60px;">
-                    <img id="rectangle_shape" src="resources/rectangle_shape.jpg" height="60px" width="60px">
+                <div id="rectangle_shape">
+                    <img id="rectangle_shape" src="resources/rectangle_shape.jpg">
                 </div>
                 <div id="heart_shape" style=" width:60px;height: 60px;">
-                    <img id="heart_shape" src="resources/heart_shape.jpg" height="60px" width="60px">
+                    <img id="heart_shape" src="resources/heart_shape.jpg">
                 </div>
                 <div id="circle_shape" style=" width:60px;height: 60px;">
-                    <img id="circle_shape" src="resources/circle_shape.jpg" height="60px" width="60px">
+                    <img id="circle_shape" src="resources/circle_shape.jpg">
                 </div>
                 <div id="star_shape" style=" width:60px;height: 60px;">
-                    <img id="star_shape" src="resources/star_shape.jpg" height="60px" width="60px">
+                    <img id="star_shape" src="resources/star_shape.jpg">
                 </div>
                 <div id="leaf_shape" style="width:60px;height: 60px;">
-                    <img id=" leaf_shape" src="resources/leaf_shape.jpg" height="60px" width="60px">
+                    <img id=" leaf_shape" src="resources/leaf_shape.jpg">
                 </div>
             </div>
         </div>
@@ -169,9 +167,7 @@
                 <div id="text_area" placeholder="Enter text here//" contenteditable="true"></div>
 
                 <!-- Code for rectangular shape notes -->
-                <div id="rectangular_note" placeholder="Enter text here//"
-                    style="height: 300px;width: 70%; background-color: white; border: 2px solid black; display: none; border-radius:10px;padding: 20px; text-wrap: wrap;"
-                    contenteditable="true">
+                <div id="rectangular_note" placeholder="Enter text here//" contenteditable="true">
                 </div>
 
                 <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes //"
